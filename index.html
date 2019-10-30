@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+
+  <body>
+    <div id="app">
+      <div :class="{k1:v1,'k2':v2}">{{message}}</div>
+      <div :class="[k1]">{{message}}</div>
+      <div :style="objStyle">{{message}}</div>
+      <p>
+        先这个不起作用是因为arrStyle的元素是字符串，但vue期望的是像objStyle一样的对象
+      </p>
+      <div :style="arrStyle">{{message}}</div>
+      <p>下面这个是正确示范</p>
+      <div :style="rightArrStyle">{{message}}</div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
